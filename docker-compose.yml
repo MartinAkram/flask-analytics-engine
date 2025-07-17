@@ -1,0 +1,85 @@
+services:
+  # ──────────────────────────
+  # Event Analytics API Service
+  # Main Flask application handling event ingestion,
+  # analytics queries, and API endpoints
+  # ──────────────────────────
+  analytics-api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - FLASK_ENV=development
+      - ANALYTICS_DEFAULT_RETENTION_DAYS=30
+      - ANALYTICS_SESSION_RETENTION_DAYS=7
+      - ANALYTICS_METRICS_RETENTION_DAYS=90
+      - REDIS_MAX_CONNECTIONS=20
+      - REDIS_RETRY_ATTEMPTS=3
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - analytics-network
+
+  # ──────────────────────────
+  # Event Processing Worker
+  # Background RQ worker for processing events,
+  # generating sample data, and heavy analytics tasks
+  # ──────────────────────────
+  event-processor:
+    build: .
+    command: rq worker analytics-processing-queue
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - FLASK_ENV=development
+      - ANALYTICS_DEFAULT_RETENTION_DAYS=30
+      - ANALYTICS_SESSION_RETENTION_DAYS=7
+      - ANALYTICS_METRICS_RETENTION_DAYS=90
+      - REDIS_MAX_CONNECTIONS=20
+      - REDIS_RETRY_ATTEMPTS=3
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - analytics-network
+
+  # ──────────────────────────
+  # Redis Data Store
+  # Primary data storage for events, user sessions,
+  # analytics metrics, and background job queues
+  # ──────────────────────────
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --maxmemory 512mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    environment:
+      - REDIS_SAVE_INTERVAL=900
+    restart: unless-stopped
+    networks:
+      - analytics-network
+
+# ──────────────────────────
+# Persistent Storage
+# ──────────────────────────
+volumes:
+  redis-data:
+    driver: local
+
+# ──────────────────────────
+# Network Configuration
+# ──────────────────────────
+networks:
+  analytics-network:
+    driver: bridge
