@@ -1,0 +1,766 @@
+{
+  "metadata": {
+    "total_events": 800,
+    "description": "Sample analytics events for Event Analytics Platform testing",
+    "event_types": ["page_view", "button_click", "form_submit", "feature_used", "user_registered", "purchase_completed", "session_start", "logout", "error_occurred", "video_played"],
+    "generated_for": "Event Analytics Platform Demo",
+    "usage": "POST each event to /events/ endpoint to populate analytics dashboard"
+  },
+  "events": [
+    {
+      "event_type": "page_view",
+      "user_id": "user_00001",
+      "session_id": "sess_a1b2c3d4",
+      "properties": {
+        "page_url": "/dashboard",
+        "page_title": "Analytics Dashboard",
+        "referrer": "https://google.com/search?q=analytics",
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        "device_type": "desktop",
+        "browser": "Chrome",
+        "country": "US",
+        "city": "San Francisco",
+        "load_time": 1.2,
+        "viewport_width": 1920,
+        "viewport_height": 1080
+      }
+    },
+    {
+      "event_type": "button_click",
+      "user_id": "user_00001",
+      "session_id": "sess_a1b2c3d4",
+      "properties": {
+        "button_text": "Get Started",
+        "button_id": "cta-primary",
+        "page_url": "/dashboard",
+        "element_position": "header",
+        "campaign_source": "organic_search",
+        "user_tier": "free"
+      }
+    },
+    {
+      "event_type": "user_registered",
+      "user_id": "user_00002",
+      "session_id": "sess_e5f6g7h8",
+      "properties": {
+        "registration_method": "email",
+        "signup_source": "google_ads",
+        "user_type": "individual",
+        "plan_selected": "pro",
+        "referral_code": "FRIEND20",
+        "email_domain": "gmail.com",
+        "account_creation_time": 127.5,
+        "utm_campaign": "q1_growth",
+        "utm_medium": "cpc"
+      }
+    },
+    {
+      "event_type": "purchase_completed",
+      "user_id": "user_00002",
+      "session_id": "sess_e5f6g7h8",
+      "properties": {
+        "transaction_id": "txn_abc123456",
+        "revenue": 49.99,
+        "currency": "USD",
+        "product_id": "pro_monthly",
+        "product_name": "Pro Monthly Plan",
+        "payment_method": "credit_card",
+        "discount_code": "FRIEND20",
+        "discount_amount": 10.0,
+        "is_first_purchase": true,
+        "billing_country": "US"
+      }
+    },
+    {
+      "event_type": "feature_used",
+      "user_id": "user_00003",
+      "session_id": "sess_i9j0k1l2",
+      "properties": {
+        "feature_name": "data_export",
+        "feature_category": "data_management",
+        "usage_duration": 45.3,
+        "export_format": "csv",
+        "records_exported": 2500,
+        "user_plan": "enterprise",
+        "is_power_user": true,
+        "success": true
+      }
+    },
+    {
+      "event_type": "page_view",
+      "user_id": "user_00004",
+      "session_id": "sess_m3n4o5p6",
+      "properties": {
+        "page_url": "/pricing",
+        "page_title": "Pricing Plans",
+        "referrer": "direct",
+        "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+        "device_type": "mobile",
+        "browser": "Safari",
+        "country": "UK",
+        "city": "London",
+        "load_time": 2.1
+      }
+    },
+    {
+      "event_type": "form_submit",
+      "user_id": "user_00004",
+      "session_id": "sess_m3n4o5p6",
+      "properties": {
+        "form_name": "contact_sales",
+        "form_id": "sales-inquiry",
+        "page_url": "/pricing",
+        "company_size": "100-500",
+        "industry": "technology",
+        "annual_revenue": "10M-50M",
+        "lead_source": "website"
+      }
+    },
+    {
+      "event_type": "video_played",
+      "user_id": "user_00005",
+      "session_id": "sess_q7r8s9t0",
+      "properties": {
+        "video_title": "Getting Started Tutorial",
+        "video_duration": 180,
+        "watched_duration": 150,
+        "completion_rate": 83.33,
+        "page_url": "/onboarding",
+        "video_quality": "1080p",
+        "autoplay": false
+      }
+    },
+    {
+      "event_type": "error_occurred",
+      "user_id": "user_00006",
+      "session_id": "sess_u1v2w3x4",
+      "properties": {
+        "error_type": "validation_error",
+        "error_message": "Invalid email format",
+        "page_url": "/signup",
+        "form_field": "email",
+        "user_input_length": 15,
+        "error_code": "INVALID_EMAIL"
+      }
+    },
+    {
+      "event_type": "session_start",
+      "user_id": "user_00007",
+      "session_id": "sess_y5z6a7b8",
+      "properties": {
+        "entry_page": "/features",
+        "traffic_source": "facebook_ads",
+        "utm_campaign": "feature_awareness",
+        "utm_medium": "social",
+        "device_type": "tablet",
+        "browser": "Firefox",
+        "country": "CA"
+      }
+    },
+    {
+      "event_type": "logout",
+      "user_id": "user_00008",
+      "session_id": "sess_c9d0e1f2",
+      "properties": {
+        "session_duration": 1847,
+        "pages_viewed": 12,
+        "actions_taken": 8,
+        "last_page": "/dashboard",
+        "logout_method": "manual"
+      }
+    },
+    {
+      "event_type": "button_click",
+      "user_id": "user_00009",
+      "session_id": "sess_g3h4i5j6",
+      "properties": {
+        "button_text": "Download Report",
+        "button_id": "download-btn",
+        "page_url": "/analytics",
+        "file_type": "pdf",
+        "report_type": "monthly_summary",
+        "user_plan": "basic"
+      }
+    },
+    {
+      "event_type": "feature_used",
+      "user_id": "user_00010",
+      "session_id": "sess_k7l8m9n0",
+      "properties": {
+        "feature_name": "dashboard_customization",
+        "feature_category": "personalization",
+        "widgets_added": 3,
+        "widgets_removed": 1,
+        "layout_changed": true,
+        "time_spent": 312.7
+      }
+    },
+    {
+      "event_type": "page_view",
+      "user_id": "user_00011",
+      "session_id": "sess_o1p2q3r4",
+      "properties": {
+        "page_url": "/integrations",
+        "page_title": "Third-party Integrations",
+        "referrer": "https://twitter.com",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "device_type": "desktop",
+        "browser": "Edge",
+        "country": "DE",
+        "city": "Berlin",
+        "load_time": 0.9
+      }
+    },
+    {
+      "event_type": "purchase_completed",
+      "user_id": "user_00012",
+      "session_id": "sess_s5t6u7v8",
+      "properties": {
+        "transaction_id": "txn_def789012",
+        "revenue": 99.99,
+        "currency": "EUR",
+        "product_id": "enterprise_annual",
+        "product_name": "Enterprise Annual Plan",
+        "payment_method": "paypal",
+        "discount_code": null,
+        "is_first_purchase": false,
+        "billing_country": "DE",
+        "subscription_upgrade": true
+      }
+    },
+    {
+      "event_type": "form_submit",
+      "user_id": "user_00013",
+      "session_id": "sess_w9x0y1z2",
+      "properties": {
+        "form_name": "feedback_survey",
+        "form_id": "user-feedback",
+        "page_url": "/feedback",
+        "satisfaction_score": 9,
+        "feature_request": "advanced_filtering",
+        "would_recommend": true,
+        "completion_time": 234.5
+      }
+    },
+    {
+      "event_type": "user_registered",
+      "user_id": "user_00014",
+      "session_id": "sess_a3b4c5d6",
+      "properties": {
+        "registration_method": "google_oauth",
+        "signup_source": "referral",
+        "user_type": "business",
+        "plan_selected": "free",
+        "referral_code": "PARTNER50",
+        "email_domain": "company.com",
+        "account_creation_time": 89.2,
+        "company_name": "TechCorp Inc"
+      }
+    },
+    {
+      "event_type": "video_played",
+      "user_id": "user_00015",
+      "session_id": "sess_e7f8g9h0",
+      "properties": {
+        "video_title": "Advanced Features Demo",
+        "video_duration": 420,
+        "watched_duration": 420,
+        "completion_rate": 100.0,
+        "page_url": "/features",
+        "video_quality": "720p",
+        "autoplay": true,
+        "full_screen": true
+      }
+    },
+    {
+      "event_type": "button_click",
+      "user_id": "user_00016",
+      "session_id": "sess_i1j2k3l4",
+      "properties": {
+        "button_text": "Share Dashboard",
+        "button_id": "share-dashboard",
+        "page_url": "/dashboard",
+        "share_method": "email",
+        "recipients_count": 3,
+        "permissions": "view_only"
+      }
+    },
+    {
+      "event_type": "error_occurred",
+      "user_id": "user_00017",
+      "session_id": "sess_m5n6o7p8",
+      "properties": {
+        "error_type": "server_error",
+        "error_message": "Service temporarily unavailable",
+        "page_url": "/dashboard",
+        "http_status": 503,
+        "retry_attempted": true,
+        "error_code": "SERVICE_UNAVAILABLE"
+      }
+    },
+    {
+      "event_type": "feature_used",
+      "user_id": "user_00018",
+      "session_id": "sess_q9r0s1t2",
+      "properties": {
+        "feature_name": "api_key_generation",
+        "feature_category": "developer_tools",
+        "api_keys_created": 2,
+        "permissions_assigned": ["read", "write"],
+        "expiration_set": true,
+        "usage_context": "automation"
+      }
+    },
+    {
+      "event_type": "page_view",
+      "user_id": "user_00019",
+      "session_id": "sess_u3v4w5x6",
+      "properties": {
+        "page_url": "/support",
+        "page_title": "Help & Support",
+        "referrer": "https://help.example.com",
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        "device_type": "desktop",
+        "browser": "Safari",
+        "country": "AU",
+        "city": "Sydney",
+        "load_time": 1.4
+      }
+    },
+    {
+      "event_type": "logout",
+      "user_id": "user_00020",
+      "session_id": "sess_y7z8a9b0",
+      "properties": {
+        "session_duration": 2103,
+        "pages_viewed": 15,
+        "actions_taken": 11,
+        "last_page": "/settings",
+        "logout_method": "timeout"
+      }
+    },
+    {
+      "event_type": "purchase_completed",
+      "user_id": "user_00021",
+      "session_id": "sess_c1d2e3f4",
+      "properties": {
+        "transaction_id": "txn_ghi345678",
+        "revenue": 19.99,
+        "currency": "GBP",
+        "product_id": "basic_monthly",
+        "product_name": "Basic Monthly Plan",
+        "payment_method": "stripe",
+        "discount_code": "WELCOME10",
+        "discount_amount": 2.0,
+        "is_first_purchase": true,
+        "billing_country": "UK"
+      }
+    },
+    {
+      "event_type": "form_submit",
+      "user_id": "user_00022",
+      "session_id": "sess_g5h6i7j8",
+      "properties": {
+        "form_name": "newsletter_signup",
+        "form_id": "newsletter-form",
+        "page_url": "/blog",
+        "email_preferences": ["product_updates", "weekly_digest"],
+        "source_article": "10-analytics-tips",
+        "opt_in_marketing": true
+      }
+    },
+    {
+      "event_type": "session_start",
+      "user_id": "user_00023",
+      "session_id": "sess_k9l0m1n2",
+      "properties": {
+        "entry_page": "/",
+        "traffic_source": "organic_search",
+        "search_keyword": "analytics platform",
+        "search_engine": "google",
+        "device_type": "mobile",
+        "browser": "Chrome",
+        "country": "FR"
+      }
+    },
+    {
+      "event_type": "video_played",
+      "user_id": "user_00024",
+      "session_id": "sess_o3p4q5r6",
+      "properties": {
+        "video_title": "Customer Success Stories",
+        "video_duration": 300,
+        "watched_duration": 195,
+        "completion_rate": 65.0,
+        "page_url": "/customers",
+        "video_quality": "1080p",
+        "autoplay": false,
+        "engagement_score": 8.2
+      }
+    },
+    {
+      "event_type": "button_click",
+      "user_id": "user_00025",
+      "session_id": "sess_s7t8u9v0",
+      "properties": {
+        "button_text": "Book Demo",
+        "button_id": "book-demo-cta",
+        "page_url": "/enterprise",
+        "demo_type": "live_demo",
+        "preferred_time": "morning",
+        "company_size": "1000+"
+      }
+    },
+    {
+      "event_type": "feature_used",
+      "user_id": "user_00026",
+      "session_id": "sess_w1x2y3z4",
+      "properties": {
+        "feature_name": "real_time_alerts",
+        "feature_category": "monitoring",
+        "alerts_configured": 5,
+        "notification_channels": ["email", "slack"],
+        "threshold_type": "percentage",
+        "alert_frequency": "immediate"
+      }
+    },
+    {
+      "event_type": "error_occurred",
+      "user_id": "user_00027",
+      "session_id": "sess_a5b6c7d8",
+      "properties": {
+        "error_type": "permission_denied",
+        "error_message": "Insufficient privileges to access this resource",
+        "page_url": "/admin",
+        "user_role": "viewer",
+        "required_role": "admin",
+        "error_code": "PERMISSION_DENIED"
+      }
+    },
+    {
+      "event_type": "page_view",
+      "user_id": "user_00028",
+      "session_id": "sess_e9f0g1h2",
+      "properties": {
+        "page_url": "/api-docs",
+        "page_title": "API Documentation",
+        "referrer": "https://stackoverflow.com",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "device_type": "desktop",
+        "browser": "Chrome",
+        "country": "JP",
+        "city": "Tokyo",
+        "load_time": 1.1
+      }
+    },
+    {
+      "event_type": "user_registered",
+      "user_id": "user_00029",
+      "session_id": "sess_i3j4k5l6",
+      "properties": {
+        "registration_method": "facebook_oauth",
+        "signup_source": "social_media",
+        "user_type": "individual",
+        "plan_selected": "basic",
+        "referral_code": null,
+        "email_domain": "yahoo.com",
+        "account_creation_time": 156.8,
+        "age_group": "25-34"
+      }
+    },
+    {
+      "event_type": "purchase_completed",
+      "user_id": "user_00030",
+      "session_id": "sess_m7n8o9p0",
+      "properties": {
+        "transaction_id": "txn_jkl901234",
+        "revenue": 199.99,
+        "currency": "CAD",
+        "product_id": "pro_annual",
+        "product_name": "Pro Annual Plan",
+        "payment_method": "credit_card",
+        "discount_code": "ANNUAL20",
+        "discount_amount": 40.0,
+        "is_first_purchase": false,
+        "billing_country": "CA",
+        "subscription_upgrade": false
+      }
+    },
+    {
+      "event_type": "form_submit",
+      "user_id": "user_00031",
+      "session_id": "sess_q1r2s3t4",
+      "properties": {
+        "form_name": "feature_request",
+        "form_id": "feature-request-form",
+        "page_url": "/feedback",
+        "feature_category": "reporting",
+        "priority": "high",
+        "description_length": 450,
+        "use_case": "advanced_segmentation"
+      }
+    },
+    {
+      "event_type": "button_click",
+      "user_id": "user_00032",
+      "session_id": "sess_u5v6w7x8",
+      "properties": {
+        "button_text": "Export CSV",
+        "button_id": "export-csv-btn",
+        "page_url": "/reports",
+        "data_range": "last_30_days",
+        "row_count": 15000,
+        "file_size_mb": 2.3
+      }
+    },
+    {
+      "event_type": "video_played",
+      "user_id": "user_00033",
+      "session_id": "sess_y9z0a1b2",
+      "properties": {
+        "video_title": "API Integration Tutorial",
+        "video_duration": 600,
+        "watched_duration": 480,
+        "completion_rate": 80.0,
+        "page_url": "/developers",
+        "video_quality": "720p",
+        "autoplay": false,
+        "code_examples_shown": 5
+      }
+    },
+    {
+      "event_type": "feature_used",
+      "user_id": "user_00034",
+      "session_id": "sess_c3d4e5f6",
+      "properties": {
+        "feature_name": "team_collaboration",
+        "feature_category": "workspace",
+        "team_members_invited": 4,
+        "permissions_granted": ["edit", "comment"],
+        "workspace_created": true,
+        "notification_settings": "all_activity"
+      }
+    },
+    {
+      "event_type": "session_start",
+      "user_id": "user_00035",
+      "session_id": "sess_g7h8i9j0",
+      "properties": {
+        "entry_page": "/login",
+        "traffic_source": "email_campaign",
+        "campaign_name": "feature_announcement",
+        "utm_medium": "email",
+        "device_type": "desktop",
+        "browser": "Firefox",
+        "country": "BR"
+      }
+    },
+    {
+      "event_type": "error_occurred",
+      "user_id": "user_00036",
+      "session_id": "sess_k1l2m3n4",
+      "properties": {
+        "error_type": "network_error",
+        "error_message": "Connection timeout",
+        "page_url": "/dashboard",
+        "retry_count": 3,
+        "connection_type": "wifi",
+        "error_code": "NETWORK_TIMEOUT"
+      }
+    },
+    {
+      "event_type": "logout",
+      "user_id": "user_00037",
+      "session_id": "sess_o5p6q7r8",
+      "properties": {
+        "session_duration": 892,
+        "pages_viewed": 6,
+        "actions_taken": 4,
+        "last_page": "/billing",
+        "logout_method": "manual"
+      }
+    },
+    {
+      "event_type": "page_view",
+      "user_id": "user_00038",
+      "session_id": "sess_s9t0u1v2",
+      "properties": {
+        "page_url": "/security",
+        "page_title": "Security & Privacy",
+        "referrer": "direct",
+        "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+        "device_type": "mobile",
+        "browser": "Safari",
+        "country": "SE",
+        "city": "Stockholm",
+        "load_time": 1.8
+      }
+    },
+    {
+      "event_type": "button_click",
+      "user_id": "user_00039",
+      "session_id": "sess_w3x4y5z6",
+      "properties": {
+        "button_text": "Upgrade Plan",
+        "button_id": "upgrade-plan-btn",
+        "page_url": "/billing",
+        "current_plan": "basic",
+        "target_plan": "pro",
+        "billing_cycle": "monthly"
+      }
+    },
+    {
+      "event_type": "form_submit",
+      "user_id": "user_00040",
+      "session_id": "sess_a7b8c9d0",
+      "properties": {
+        "form_name": "support_ticket",
+        "form_id": "support-form",
+        "page_url": "/support",
+        "issue_category": "billing",
+        "priority": "medium",
+        "description_length": 280,
+        "attachments_count": 1
+      }
+    },
+    {
+      "event_type": "feature_used",
+      "user_id": "user_00041",
+      "session_id": "sess_e1f2g3h4",
+      "properties": {
+        "feature_name": "scheduled_reports",
+        "feature_category": "automation",
+        "report_frequency": "weekly",
+        "recipients_count": 8,
+        "report_format": "pdf",
+        "data_sources": 3
+      }
+    },
+    {
+      "event_type": "user_registered",
+      "user_id": "user_00042",
+      "session_id": "sess_i5j6k7l8",
+      "properties": {
+        "registration_method": "email",
+        "signup_source": "partnership",
+        "user_type": "business",
+        "plan_selected": "enterprise",
+        "referral_code": "PARTNER100",
+        "email_domain": "enterprise.com",
+        "account_creation_time": 203.4,
+        "company_name": "Global Solutions Ltd"
+      }
+    },
+    {
+      "event_type": "video_played",
+      "user_id": "user_00043",
+      "session_id": "sess_m9n0o1p2",
+      "properties": {
+        "video_title": "Data Privacy Overview",
+        "video_duration": 240,
+        "watched_duration": 240,
+        "completion_rate": 100.0,
+        "page_url": "/security",
+        "video_quality": "1080p",
+        "autoplay": false,
+        "captions_enabled": true
+      }
+    },
+    {
+      "event_type": "purchase_completed",
+      "user_id": "user_00044",
+      "session_id": "sess_q3r4s5t6",
+      "properties": {
+        "transaction_id": "txn_mno567890",
+        "revenue": 299.99,
+        "currency": "USD",
+        "product_id": "enterprise_monthly",
+        "product_name": "Enterprise Monthly Plan",
+        "payment_method": "invoice",
+        "discount_code": null,
+        "is_first_purchase": true,
+        "billing_country": "US",
+        "seats_purchased": 50
+      }
+    },
+    {
+      "event_type": "error_occurred",
+      "user_id": "user_00045",
+      "session_id": "sess_u7v8w9x0",
+      "properties": {
+        "error_type": "validation_error",
+        "error_message": "File size exceeds maximum limit",
+        "page_url": "/upload",
+        "file_size_mb": 105,
+        "max_allowed_mb": 100,
+        "file_type": "csv",
+        "error_code": "FILE_TOO_LARGE"
+      }
+    },
+    {
+      "event_type": "button_click",
+      "user_id": "user_00046",
+      "session_id": "sess_y1z2a3b4",
+      "properties": {
+        "button_text": "Connect Integration",
+        "button_id": "connect-salesforce",
+        "page_url": "/integrations",
+        "integration_type": "salesforce",
+        "authentication_method": "oauth2",
+        "permissions_requested": ["read_contacts", "read_opportunities"]
+      }
+    },
+    {
+      "event_type": "feature_used",
+      "user_id": "user_00047",
+      "session_id": "sess_c5d6e7f8",
+      "properties": {
+        "feature_name": "custom_dashboards",
+        "feature_category": "visualization",
+        "dashboard_created": true,
+        "widgets_count": 8,
+        "chart_types_used": ["bar", "line", "pie"],
+        "sharing_enabled": true
+      }
+    },
+    {
+      "event_type": "session_start",
+      "user_id": "user_00048",
+      "session_id": "sess_g9h0i1j2",
+      "properties": {
+        "entry_page": "/changelog",
+        "traffic_source": "product_hunt",
+        "utm_campaign": "product_launch",
+        "utm_medium": "social",
+        "device_type": "tablet",
+        "browser": "Safari",
+        "country": "NL"
+      }
+    },
+    {
+      "event_type": "form_submit",
+      "user_id": "user_00049",
+      "session_id": "sess_k3l4m5n6",
+      "properties": {
+        "form_name": "beta_signup",
+        "form_id": "beta-access-form",
+        "page_url": "/beta",
+        "interested_features": ["ai_insights", "predictive_analytics"],
+        "current_tool": "google_analytics",
+        "team_size": "10-25"
+      }
+    },
+    {
+      "event_type": "logout",
+      "user_id": "user_00050",
+      "session_id": "sess_o7p8q9r0",
+      "properties": {
+        "session_duration": 1567,
+        "pages_viewed": 18,
+        "actions_taken": 14,
+        "last_page": "/reports",
+        "logout_method": "manual"
+      }
+    }
+  ]
+} 
